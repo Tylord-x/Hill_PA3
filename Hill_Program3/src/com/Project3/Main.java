@@ -26,16 +26,16 @@ public class Main {
         int incorrect = SecureRandom.nextInt(4);
         switch (incorrect) {
             case 0:
-                System.out.println("Very Good !");
+                System.out.println("No. Please try again.");
                 break;
             case 1:
-                System.out.println("Excellent !");
+                System.out.println("Wrong. Try once more.");
                 break;
             case 2:
-                System.out.println("Nice Work !");
+                System.out.println("Don't give up!");
                 break;
             case 3:
-                System.out.println("Keep up the good work !");
+                System.out.println("No. Keep trying. ");
                 break;
         }
     }
@@ -46,10 +46,11 @@ public class Main {
                 System.out.println("How much is " + n1 + " times " + n2 + "?");
                 int n3 = scnr.nextInt();
                 if (n3 == m) {
-                    System.out.println("Very Good");
+                    correct();
                     break;
-                } else {
-                    System.out.println("No, Please try again");
+                }
+                else {
+                    incorrect();
                 }
             }
             return 0;
