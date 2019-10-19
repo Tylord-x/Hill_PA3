@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    static int correctanswer, count;
     static Random SecureRandom = new Random();
     static void correct() {
         int correct = SecureRandom.nextInt(4);
@@ -47,10 +48,12 @@ public class Main {
                 int n3 = scnr.nextInt();
                 if (n3 == m) {
                     correct();
+                    correctanswer++;
                     break;
                 }
                 else {
                     incorrect();
+                    break;
                 }
             }
             return 0;
@@ -58,10 +61,15 @@ public class Main {
 
         public static void main (String[]args){
             int n1, n2;
-            while (true) {
+            while (count < 10) {
+                count++;
                 n1 = SecureRandom.nextInt(10);
                 n2 = SecureRandom.nextInt(10);
                 multiplication(n1, n2);
             }
+            if (correctanswer > 7.5){
+                System.out.println("Congratulations, you are ready to go to the next level!");
+            }
+            else System.out.println("Please ask your teacher for extra help.");
         }
     }
