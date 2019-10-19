@@ -60,13 +60,45 @@ public class Main {
         }
 
         public static void main (String[]args){
-            int n1, n2;
-            while (count < 10) {
-                count++;
-                n1 = SecureRandom.nextInt(10);
-                n2 = SecureRandom.nextInt(10);
-                multiplication(n1, n2);
+            int n1, n2, diff;
+            System.out.println("Enter a difficulty level: ");
+            System.out.println("1. As large as Single Digit Numbers");
+            System.out.println("2. As large as Double Digit Numbers");
+            System.out.println("3. As Large as Triple Digit Numbers");
+            System.out.println("4. As Large as Four Digit Numbers");
+            System.out.print("Enter choice: ");
+            diff = scnr.nextInt();
+            switch(diff) {
+                case 1:
+                    while (count < 10) {
+                        count++;
+                        n1 = SecureRandom.nextInt(10);
+                        n2 = SecureRandom.nextInt(10);
+                        multiplication(n1, n2);
+                    }
+                case 2:
+                    while (count < 10) {
+                        count++;
+                        n1 = SecureRandom.nextInt(100);
+                        n2 = SecureRandom.nextInt(100);
+                        multiplication(n1, n2);
+                    }
+                case 3:
+                    while (count < 10) {
+                        count++;
+                        n1 = SecureRandom.nextInt(1000);
+                        n2 = SecureRandom.nextInt(1000);
+                        multiplication(n1, n2);
+                    }
+                case 4:
+                    while (count < 10) {
+                        count++;
+                        n1 = SecureRandom.nextInt(10000);
+                        n2 = SecureRandom.nextInt(10000);
+                        multiplication(n1, n2);
+                    }
             }
+            System.out.printf("Your percentage was %d%%\n", (correctanswer/count)*100);
             if (correctanswer > 7.5){
                 System.out.println("Congratulations, you are ready to go to the next level!");
             }
